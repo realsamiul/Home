@@ -1,53 +1,199 @@
 .landing{
-    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
 
-    img{
-      object-fit: cover;
+    .locationBadge{
+        position: absolute;
+        top: 100px;
+        right: 100px;
+        color: white;
+        font-size: 14px;
+        opacity: 0.8;
+
+        p{
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     }
-    
+
+    .heroContent{
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        transform: translateY(-50%);
+        color: white;
+
+        .heroSubtext{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+
+            .arrow{
+                svg{
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+
+            h4{
+                font-size: 18px;
+                margin: 0;
+                font-weight: 400;
+
+                span{
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .bigName{
+            h1{
+                font-size: clamp(80px, 12vw, 180px);
+                margin: 0;
+                font-weight: 300;
+                line-height: 0.9;
+
+                .spacer{
+                    opacity: 0.5;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
     .sliderContainer{
-      position: absolute;
-      top: calc(100vh - 350px);
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+
+        .slider{
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+
+            p{
+                margin: 0px;
+                color: white;
+                font-size: clamp(60px, 8vw, 120px);
+                font-weight: 300;
+                padding-right: 50px;
+                opacity: 0.7;
+            }
+        }
     }
-    
-    .slider{
-      position: relative;
-      white-space: nowrap;
-    }
-    
-    .slider p{
-      position: relative;
-      margin: 0px;
-      color: white;
-      font-size: 230px;
-      font-weight: 500;
-      padding-right: 50px;
-    }
-    
-    .slider p:nth-of-type(2){
-      position: absolute;
-      left: 100%;
-      top: 0;
-    }
-  
+
     .description{
-      position: absolute;
-      top: 35%;
-      left: 65%;
-      color: white;
-      font-size: 24px;
-      font-weight: 300;
-      p{
-        margin: 0px;
-        margin-bottom: 10px;
-      }
-      svg{
-        transform: scale(2);
-        margin-bottom: 100px;
-      }
+        position: absolute;
+        top: 200px;
+        right: 200px;
+        width: 300px;
+        color: white;
+        display: flex;
+        align-items: end;
+        gap: 10px;
+
+        p{
+            font-size: 16px;
+            margin: 0px;
+            font-weight: 300;
+            opacity: 0.9;
+
+            &:first-of-type{
+                margin-top: 10px;
+            }
+        }
     }
-  }
-  
+
+    .introSection{
+        position: absolute;
+        bottom: 200px;
+        right: 100px;
+        max-width: 500px;
+        color: white;
+
+        .introTitle{
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .introText{
+            p{
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                opacity: 0.9;
+                font-weight: 300;
+            }
+
+            .ctaButton{
+                display: inline-block;
+                padding: 15px 30px;
+                border: 1px solid rgba(255,255,255,0.3);
+                border-radius: 50px;
+                font-size: 14px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+
+                &:hover{
+                    background: rgba(255,255,255,0.1);
+                    border-color: rgba(255,255,255,0.8);
+                }
+
+                span{
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .heroContent{
+            left: 50px;
+
+            .heroSubtext{
+                h4{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .description{
+            top: auto;
+            bottom: 300px;
+            right: 50px;
+            width: 250px;
+        }
+
+        .introSection{
+            bottom: 150px;
+            right: 50px;
+            max-width: 300px;
+
+            .introTitle{
+                font-size: 24px;
+            }
+        }
+
+        .sliderContainer{
+            bottom: 50px;
+        }
+
+        .locationBadge{
+            top: 50px;
+            right: 50px;
+        }
+    }
+}
